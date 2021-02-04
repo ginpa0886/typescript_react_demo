@@ -1,0 +1,16 @@
+import React from 'react';
+import styled from 'styled-components';
+
+interface IIputProps {
+  value:string;
+  onChange: (event: React.SyntheticEvent<HTMLInputElement>) => void;
+}
+
+export const Input: React.FunctionComponent<IIputProps> = ({value, onChange}) => ( <input type="text" placeholder="Name" value={value} onChange={onChange} /> );
+
+interface IFormProps {
+  onFormSubmit: (event:React.FormEvent) => void;
+}
+
+export const Form: React.FunctionComponent<IFormProps> = ({ children, onFormSubmit }) => ( <form onSubmit={onFormSubmit}>{children}</form> );
+
